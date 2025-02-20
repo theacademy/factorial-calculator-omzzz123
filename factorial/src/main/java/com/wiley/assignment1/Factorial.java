@@ -36,13 +36,12 @@ public class Factorial {
 		//YOUR CODE STARTS HERE
 
 		// checking if input is valid, reading its input as a string, seeing range in 1-10
-		String input = scanner.next();
-		num = -1;
-				//using regex to check input, convert string input to integer
-				if (input.matches("[1-9]|10")){
-					num = Integer.parseInt(input);
-					return num;
-				}
+		 if (scanner.hasNextInt()) {
+			 num = scanner.nextInt();
+			 if (num >= 1 && num <= 10) {
+				 return num;
+			 }
+		 }
 				this.printStream.println("Invalid entry. Please enter an integer between 1 and 10, inclusive.");
 		return -1;
 
